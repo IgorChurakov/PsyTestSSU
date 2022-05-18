@@ -1,0 +1,44 @@
+{
+  "test" : "test name",
+  "questions" : [
+      {
+        "title" : "question 1",
+        "answers" : [
+            {
+              "name" : "answer 1",
+              "correctAnswer" : true
+            },
+            {
+              "name" : "answer 2",
+              "correctAnswer" : false
+            }
+        ]
+      },
+      {
+        "title" : "question 2",
+        "answers" : [
+            {
+              "name" : "answer 1",
+              "correctAnswer" : false
+            },
+            {
+              "name" : "answer 2",
+              "correctAnswer" : true
+            }
+        ]
+      },
+      {
+        "title" : "question 3",
+        "answers" : [
+            {
+              "name" : "answer 1",
+              "correctAnswer" : false
+            },
+            {
+              "name" : "answer 2",
+              "correctAnswer" : true
+            }
+        ]
+      }
+  ]
+}
