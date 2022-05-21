@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="12">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="22"/>
-        <UsageCount Value="117"/>
+        <UsageCount Value="128"/>
       </Unit0>
       <Unit1>
         <Filename Value="PsyTest/editor.pas"/>
@@ -17,10 +17,10 @@
         <ComponentName Value="EditorWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="132"/>
         <CursorPos X="52" Y="176"/>
-        <UsageCount Value="117"/>
+        <UsageCount Value="128"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -30,11 +30,10 @@
         <ComponentName Value="AdminWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="107"/>
-        <CursorPos X="41" Y="130"/>
-        <UsageCount Value="117"/>
+        <TopLine Value="75"/>
+        <CursorPos X="22" Y="102"/>
+        <UsageCount Value="128"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -44,10 +43,10 @@
         <ComponentName Value="UserWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="50"/>
-        <CursorPos X="49" Y="55"/>
-        <UsageCount Value="44"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="34"/>
+        <CursorPos X="28" Y="54"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -56,11 +55,13 @@
         <ComponentName Value="TestWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="148"/>
-        <CursorPos X="29" Y="120"/>
-        <UsageCount Value="41"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="146"/>
+        <CursorPos X="28" Y="175"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="PsyTest/main.pas"/>
@@ -68,155 +69,189 @@
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="81"/>
-        <CursorPos X="18" Y="96"/>
-        <UsageCount Value="31"/>
+        <TopLine Value="82"/>
+        <CursorPos X="9" Y="84"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit5>
       <Unit6>
+        <Filename Value="PsyTest/results.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormResult"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="63"/>
+        <CursorPos X="36" Y="79"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormChangePassword"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="45"/>
+        <CursorPos X="36" Y="76"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="/usr/lib/lazarus/2.0.6/lcl/include/control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3532"/>
         <CursorPos Y="3550"/>
-        <UsageCount Value="5"/>
-      </Unit6>
-      <Unit7>
+        <UsageCount Value="4"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="/usr/lib/lazarus/2.0.6/lcl/include/customlistbox.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="176"/>
         <CursorPos Y="203"/>
-        <UsageCount Value="4"/>
-      </Unit7>
-      <Unit8>
+        <UsageCount Value="3"/>
+      </Unit9>
+      <Unit10>
         <Filename Value="/usr/lib/lazarus/2.0.6/components/lazutils/laztracer.pas"/>
         <UnitName Value="LazTracer"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="32"/>
         <CursorPos Y="50"/>
-        <UsageCount Value="7"/>
-      </Unit8>
+        <UsageCount Value="6"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="/usr/lib/lazarus/2.0.6/lcl/grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5236"/>
+        <CursorPos X="46" Y="5250"/>
+        <UsageCount Value="10"/>
+      </Unit11>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="PsyTest/user.pas"/>
-        <Caret Line="61" Column="31" TopLine="34"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="23" Column="40" TopLine="4"/>
       </Position1>
       <Position2>
-        <Filename Value="PsyTest/user.pas"/>
-        <Caret Line="36" Column="3" TopLine="14"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="79" Column="48" TopLine="39"/>
       </Position2>
       <Position3>
-        <Filename Value="PsyTest/user.pas"/>
-        <Caret Line="35" Column="13" TopLine="14"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="77" Column="45" TopLine="44"/>
       </Position3>
       <Position4>
-        <Filename Value="PsyTest/user.pas"/>
-        <Caret Line="36" Column="13" TopLine="14"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="8" Column="73"/>
       </Position4>
       <Position5>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="58" Column="125" TopLine="38"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="77" Column="69" TopLine="51"/>
       </Position5>
       <Position6>
-        <Filename Value="PsyTest/user.pas"/>
-        <Caret Line="36" Column="67" TopLine="19"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="78" Column="56" TopLine="57"/>
       </Position6>
       <Position7>
-        <Filename Value="PsyTest/test.pas"/>
-        <Caret Line="168" Column="55" TopLine="148"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="125" Column="26" TopLine="85"/>
       </Position7>
       <Position8>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="100" Column="53" TopLine="64"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="66" Column="52" TopLine="36"/>
       </Position8>
       <Position9>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="103" Column="53" TopLine="67"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="88" Column="63" TopLine="64"/>
       </Position9>
       <Position10>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="102" Column="53" TopLine="66"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="91" Column="63" TopLine="67"/>
       </Position10>
       <Position11>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="101" Column="53" TopLine="65"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="90" Column="63" TopLine="66"/>
       </Position11>
       <Position12>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="102" Column="53" TopLine="66"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="89" Column="63" TopLine="65"/>
       </Position12>
       <Position13>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="103" Column="53" TopLine="67"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="91" Column="63" TopLine="67"/>
       </Position13>
       <Position14>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="102" Column="53" TopLine="66"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="67" Column="52" TopLine="37"/>
       </Position14>
       <Position15>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="101" Column="53" TopLine="65"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="105" Column="34" TopLine="65"/>
       </Position15>
       <Position16>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="100" Column="53" TopLine="64"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="100" Column="9" TopLine="65"/>
       </Position16>
       <Position17>
         <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="112" Column="53" TopLine="76"/>
+        <Caret Line="106" Column="107" TopLine="81"/>
       </Position17>
       <Position18>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="111" Column="53" TopLine="75"/>
+        <Filename Value="PsyTest/admin.pas"/>
+        <Caret Line="112" Column="62" TopLine="80"/>
       </Position18>
       <Position19>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="110" Column="53" TopLine="74"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="8" Column="97"/>
       </Position19>
       <Position20>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="109" Column="53" TopLine="73"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="43" Column="3"/>
       </Position20>
       <Position21>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="108" Column="53" TopLine="72"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="45" Column="9" TopLine="4"/>
       </Position21>
       <Position22>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="107" Column="53" TopLine="71"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="69" Column="47" TopLine="36"/>
       </Position22>
       <Position23>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="106" Column="53" TopLine="70"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="8" Column="96"/>
       </Position23>
       <Position24>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="66" Column="130" TopLine="53"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="59" Column="29" TopLine="37"/>
       </Position24>
       <Position25>
-        <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="85" Column="35" TopLine="47"/>
+        <Filename Value="PsyTest/changepass.pas"/>
+        <Caret Line="69" Column="73" TopLine="45"/>
       </Position25>
       <Position26>
         <Filename Value="PsyTest/main.pas"/>
-        <Caret Line="107" Column="114" TopLine="63"/>
+        <Caret Line="97" Column="72" TopLine="82"/>
       </Position26>
       <Position27>
-        <Filename Value="PsyTest/admin.pas"/>
-        <Caret Line="16" Column="39" TopLine="16"/>
+        <Filename Value="PsyTest/main.pas"/>
+        <Caret Line="99" Column="72" TopLine="84"/>
       </Position27>
       <Position28>
-        <Filename Value="PsyTest/admin.pas"/>
-        <Caret Line="57" Column="40" TopLine="38"/>
+        <Filename Value="PsyTest/main.pas"/>
+        <Caret Line="100" Column="72" TopLine="85"/>
       </Position28>
       <Position29>
-        <Filename Value="PsyTest/admin.pas"/>
-        <Caret Line="129" Column="30" TopLine="106"/>
+        <Filename Value="PsyTest/main.pas"/>
+        <Caret Line="107" Column="72" TopLine="92"/>
       </Position29>
       <Position30>
-        <Filename Value="PsyTest/admin.pas"/>
-        <Caret Line="130" Column="42" TopLine="106"/>
+        <Filename Value="PsyTest/results.pas"/>
+        <Caret Line="88" Column="47" TopLine="70"/>
       </Position30>
     </JumpHistory>
     <RunParams>

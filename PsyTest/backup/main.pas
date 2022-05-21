@@ -5,7 +5,7 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Fpjson, jsonparser, FileUtil;
 
 type
 
@@ -91,8 +91,24 @@ begin
 end;
 
 procedure TMainForm.ButtonNextAdminClick(Sender: TObject);
+var
+  JRoot:TJSONData;
 begin
-
+  JRoot:=GetJSON(ReadFileToString('PsyTest/utils/technicalfile.json'));
+  try
+    if (EditPassword.Text = '') or (EditPassword.Text <> JRoot.FindPath('password').AsString) then
+       begin
+            ShowMessage('Неверный пароль!');
+            EditPassword.Clear;
+       end
+    else
+      begin
+        MainForm.Visible:=false;
+        admin.AdminWindow.ShowModal;
+      end;
+  finally
+    FreeAndNil(JRoot);
+  end;
 end;
 
 procedure TMainForm.ButtonAdminClick(Sender: TObject);

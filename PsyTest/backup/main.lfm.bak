@@ -180,6 +180,9 @@ object MainForm: TMainForm
       Height = 27
       Top = 80
       Width = 280
+      EchoMode = emPassword
+      ParentShowHint = False
+      PasswordChar = '*'
       TabOrder = 1
     end
     object ButtonBackAdmin: TButton

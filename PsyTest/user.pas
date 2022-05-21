@@ -41,10 +41,18 @@ implementation
 { TUserWindow }
 
 procedure TUserWindow.FormCreate(Sender: TObject);
+
+begin
+
+end;
+
+procedure TUserWindow.FormShow(Sender: TObject);
 var
   Sr : TSearchRec;
   Attr : Integer;
 begin
+  UserWindow.ListBox1.Clear;
+  UserWindow.Caption:='Окно пользователя - ' + main.currentStudent.familyName + ' ' + main.currentStudent.firstName + ' ' + main.currentStudent.lastName;
   gPath := IncludeTrailingPathDelimiter(gPath); //Если конечный слеш отсутствует, то добавляем его.
   Attr := faAnyFile - faDirectory;    //Все файлы, исключая папки.
   try
@@ -55,11 +63,6 @@ begin
   finally
     FindClose(Sr);
   end;
-end;
-
-procedure TUserWindow.FormShow(Sender: TObject);
-begin
-  UserWindow.Caption:='Окно пользователя - ' + main.currentStudent.familyName + ' ' + main.currentStudent.firstName + ' ' + main.currentStudent.lastName;
 end;
 
 procedure TUserWindow.FormClose(Sender: TObject; var CloseAction: TCloseAction);

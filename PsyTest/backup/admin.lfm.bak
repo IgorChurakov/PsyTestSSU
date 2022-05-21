@@ -1,17 +1,19 @@
 object AdminWindow: TAdminWindow
-  Left = 433
+  Left = 443
   Height = 768
-  Top = 140
+  Top = 125
   Width = 1024
   Caption = 'Окно администратора'
-  ClientHeight = 768
+  ClientHeight = 744
   ClientWidth = 1024
   Constraints.MaxHeight = 768
   Constraints.MaxWidth = 1024
   Constraints.MinHeight = 768
   Constraints.MinWidth = 1024
+  Menu = MenuItems
   OnClose = FormClose
   OnCreate = FormCreate
+  Position = poScreenCenter
   LCLVersion = '2.0.6.0'
   object Panel1: TPanel
     Left = 0
@@ -24,7 +26,7 @@ object AdminWindow: TAdminWindow
     object ListBox1: TListBox
       Left = 16
       Height = 696
-      Top = 56
+      Top = 48
       Width = 992
       ItemHeight = 0
       ScrollWidth = 990
@@ -66,6 +68,40 @@ object AdminWindow: TAdminWindow
       Caption = 'Назад'
       OnClick = BackButtonClick
       TabOrder = 4
+    end
+  end
+  object MenuItems: TMainMenu
+    left = 749
+    top = 8
+    object ItemFile: TMenuItem
+      Caption = 'Файл'
+      object ItemResults: TMenuItem
+        Caption = 'Результаты'
+        OnClick = ItemResultsClick
+      end
+      object ItemChangePassword: TMenuItem
+        Caption = 'Изменить пароль'
+        OnClick = ItemChangePasswordClick
+      end
+      object ItemBack: TMenuItem
+        Caption = 'Назад'
+        OnClick = BackButtonClick
+      end
+    end
+    object ItemEditor: TMenuItem
+      Caption = 'Редактор'
+      object ItemAdd: TMenuItem
+        Caption = 'Добавить'
+        OnClick = CreateTestButtonClick
+      end
+      object ItemEdit: TMenuItem
+        Caption = 'Редактировать'
+        OnClick = EditTestButtonClick
+      end
+      object ItemDelete: TMenuItem
+        Caption = 'Удалить'
+        OnClick = DeleteTestButtonClick
+      end
     end
   end
 end

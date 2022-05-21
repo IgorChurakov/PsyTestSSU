@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  Fpjson, jsonparser, FileUtil;
+  Menus, Fpjson, jsonparser, FileUtil;
 
 type
 
@@ -17,7 +17,19 @@ type
     DeleteTestButton: TButton;
     EditTestButton: TButton;
     BackButton: TButton;
+    ItemDelete: TMenuItem;
+    ItemEditor: TMenuItem;
     ListBox1: TListBox;
+    //Menu: TMainMenu;
+    ItemFile: TMenuItem;
+    ItemBack: TMenuItem;
+    ItemEdit: TMenuItem;
+    ItemAdd: TMenuItem;
+    ItemResults: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    ItemChangePassword: TMenuItem;
+    MenuItems: TMainMenu;
     Panel1: TPanel;
     procedure BackButtonClick(Sender: TObject);
     procedure CreateTestButtonClick(Sender: TObject);
@@ -25,6 +37,9 @@ type
     procedure EditTestButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure ItemBackClick(Sender: TObject);
+    procedure ItemChangePasswordClick(Sender: TObject);
+    procedure ItemResultsClick(Sender: TObject);
   private
 
   public
@@ -52,7 +67,7 @@ var
   currentTest: Test;
 
 implementation
-uses editor, main;
+uses editor, main, results, changepass;
 {$R *.lfm}
 
 { TAdminWindow }
@@ -73,10 +88,20 @@ end;
 procedure TAdminWindow.DeleteTestButtonClick(Sender: TObject);
 begin
    if (ListBox1.SelCount > 0) then
-   Begin
-       DeleteFile(gPath + ListBox1.Items[ListBox1.ItemIndex]);
-       ListBox1.Items.Delete(ListBox1.ItemIndex);
-   end;
+     Begin
+           case QuestionDlg('Подстверждение операции',
+                   'Вы действительно хотите удалить тест ' + ListBox1.Items[ListBox1.ItemIndex] + '?',
+                   mtConfirmation,
+                   [mrNo, '&Нет','IsDefault',
+                   mrYes,'&Да'],0)
+          of
+           mrYes :
+              begin
+                DeleteFile(gPath + ListBox1.Items[ListBox1.ItemIndex]);
+                ListBox1.Items.Delete(ListBox1.ItemIndex);
+              end;
+          end;
+     end;
 end;
 
 procedure TAdminWindow.EditTestButtonClick(Sender: TObject);
@@ -145,6 +170,22 @@ begin
   finally
     FindClose(Sr);
   end;
+end;
+
+procedure TAdminWindow.ItemBackClick(Sender: TObject);
+begin
+
+end;
+
+procedure TAdminWindow.ItemChangePasswordClick(Sender: TObject);
+begin
+  changepass.FormChangePassword.ShowModal;
+end;
+
+procedure TAdminWindow.ItemResultsClick(Sender: TObject);
+begin
+  AdminWindow.Visible:=false;
+  results.FormResult.ShowModal;
 end;
 
 end.

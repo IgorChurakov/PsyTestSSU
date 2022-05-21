@@ -5,7 +5,8 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Menus, Fpjson, jsonparser, FileUtil;
 
 type
 
@@ -30,6 +31,9 @@ type
     LabelPassword: TLabel;
     LabelLastName: TLabel;
     LabelGroup: TLabel;
+    MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
     PanelAuthorizationAdmin: TPanel;
     PanelMain: TPanel;
     PanelAuthorizationUser: TPanel;
@@ -40,6 +44,7 @@ type
     procedure ButtonNextUserClick(Sender: TObject);
     procedure ButtonUserClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
   private
 
   public
@@ -74,6 +79,11 @@ begin
   PanelAuthorizationAdmin.Left:=300;
 end;
 
+procedure TMainForm.MenuItem2Click(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TMainForm.ButtonUserClick(Sender: TObject);
 begin
   PanelMain.Visible:=false;
@@ -91,9 +101,24 @@ begin
 end;
 
 procedure TMainForm.ButtonNextAdminClick(Sender: TObject);
+var
+  JRoot:TJSONData;
 begin
-  MainForm.Visible:=false;
-  admin.AdminWindow.ShowModal;
+  JRoot:=GetJSON(ReadFileToString('PsyTest/utils/technicalfile.json'));
+  try
+    if (EditPassword.Text = '') or (EditPassword.Text <> JRoot.FindPath('password').AsString) then
+       begin
+            ShowMessage('Неверный пароль!');
+            EditPassword.Clear;
+       end
+    else
+      begin
+        MainForm.Visible:=false;
+        admin.AdminWindow.ShowModal;
+      end;
+  finally
+    FreeAndNil(JRoot);
+  end;
 end;
 
 procedure TMainForm.ButtonAdminClick(Sender: TObject);

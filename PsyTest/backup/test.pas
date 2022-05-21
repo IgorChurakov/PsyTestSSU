@@ -129,10 +129,10 @@ begin
                                   'firstname',main.currentStudent.firstName,
                                   'lastname',main.currentStudent.lastName,
                                   'testname',testName,
-                                  'result',correctAnswer + ' из ' + AllAnswer]);
+                                  'result',correctAnswer + ' из ' + AllAnswer + ' (' + FloatToStrF(correctAnswer/AllAnswer*100,ffFixed,5,2)+ '%)']);
   strList := TStringList.Create;
   strList.Text:=jDocument.FormatJSON();
-  strList.SaveToFile('PsyTest/results/' + main.currentStudent.group + user.currentTest.name + main.currentStudent.familyName + main.currentStudent.firstName + main.currentStudent.lastName + '.json');
+  strList.SaveToFile('PsyTest/results/' + main.currentStudent.group + ' ' + user.currentTest.name + ' ' + main.currentStudent.familyName + ' ' + main.currentStudent.firstName + ' ' + main.currentStudent.lastName + '.json');
   FreeAndNil(jDocument);
   FreeAndNil(strList);
 end;
@@ -178,13 +178,12 @@ begin
         if QuestionDlg('Тест завершен',
                        'Результат: '  + IntToStr(userCorrectAnswer) + ' из ' +  IntToStr(Length(user.currentTest.questions)) + ' (' + FloatToStrF(userCorrectAnswer/Length(user.currentTest.questions)*100,ffFixed,5,2)+ '%)'
                        ,mtCustom,
-                       [mrYes,'Да',
+                       [mrYes,'Ок',
                        'IsDefault'],
                        '') = mrYes then
           close
         else
           close;
-
      end;
 end;
 

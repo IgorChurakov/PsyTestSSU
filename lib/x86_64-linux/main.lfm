@@ -1,15 +1,16 @@
 object MainForm: TMainForm
-  Left = 368
+  Left = 396
   Height = 768
-  Top = 73
+  Top = 142
   Width = 1024
   Caption = 'PsyTestSGU'
-  ClientHeight = 768
+  ClientHeight = 744
   ClientWidth = 1024
   Constraints.MaxHeight = 768
   Constraints.MaxWidth = 1024
   Constraints.MinHeight = 768
   Constraints.MinWidth = 1024
+  Menu = MainMenu1
   OnCreate = FormCreate
   OnShow = ButtonBackUserClick
   Position = poScreenCenter
@@ -180,6 +181,9 @@ object MainForm: TMainForm
       Height = 27
       Top = 80
       Width = 280
+      EchoMode = emPassword
+      ParentShowHint = False
+      PasswordChar = '*'
       TabOrder = 1
     end
     object ButtonBackAdmin: TButton
@@ -190,6 +194,17 @@ object MainForm: TMainForm
       Caption = 'Назад'
       OnClick = ButtonBackAdminClick
       TabOrder = 2
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 273
+    top = 506
+    object MenuItem1: TMenuItem
+      Caption = 'Файл'
+      object MenuItem2: TMenuItem
+        Caption = 'Выход'
+        OnClick = MenuItem2Click
+      end
     end
   end
 end
