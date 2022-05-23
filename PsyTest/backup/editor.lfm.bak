@@ -1,7 +1,7 @@
 object EditorWindow: TEditorWindow
-  Left = 505
+  Left = 687
   Height = 768
-  Top = 159
+  Top = 168
   Width = 1024
   Caption = 'Окно редактора'
   ClientHeight = 768
@@ -12,6 +12,7 @@ object EditorWindow: TEditorWindow
   Constraints.MinWidth = 1024
   OnClose = FormClose
   OnCreate = FormCreate
+  Position = poScreenCenter
   LCLVersion = '2.0.6.0'
   object Label1: TLabel
     Left = 16

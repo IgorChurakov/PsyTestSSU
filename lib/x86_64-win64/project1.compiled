@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\Lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1411537227"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw3 -gl -WG -l -vewnhibq -FiF:\JOB\Sources\PsyTestSSU-aigudkov-patch-1\lib\x86_64-win64 -FuF:\JOB\Sources\PsyTestSSU-aigudkov-patch-1\PsyTest -FuC:\Lazarus\lcl\units\x86_64-win64\win32 -FuC:\Lazarus\lcl\units\x86_64-win64 -FuC:\Lazarus\components\freetype\lib\x86_64-win64 -FuC:\Lazarus\components\lazutils\lib\x86_64-win64 -FuC:\Lazarus\packager\units\x86_64-win64 -FuF:\JOB\Sources\PsyTestSSU-aigudkov-patch-1\ -FUF:\JOB\Sources\PsyTestSSU-aigudkov-patch-1\lib\x86_64-win64\ -FEF:\JOB\Sources\PsyTestSSU-aigudkov-patch-1\ -oF:\JOB\Sources\PsyTestSSU-aigudkov-patch-1\project1.exe -dLCL -dLCLwin32 project1.lpr"/>
+</CONFIG>

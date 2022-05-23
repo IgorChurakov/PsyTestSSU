@@ -13,6 +13,7 @@ type
   { TAdminWindow }
 
   TAdminWindow = class(TForm)
+    StatsButton: TButton;
     CreateTestButton: TButton;
     DeleteTestButton: TButton;
     EditTestButton: TButton;
@@ -40,6 +41,7 @@ type
     procedure ItemBackClick(Sender: TObject);
     procedure ItemChangePasswordClick(Sender: TObject);
     procedure ItemResultsClick(Sender: TObject);
+    procedure StatsButtonClick(Sender: TObject);
   private
 
   public
@@ -67,7 +69,7 @@ var
   currentTest: Test;
 
 implementation
-uses editor, main, results, changepass;
+uses editor, main, results, changepass, stats;
 {$R *.lfm}
 
 { TAdminWindow }
@@ -186,6 +188,35 @@ procedure TAdminWindow.ItemResultsClick(Sender: TObject);
 begin
   AdminWindow.Visible:=false;
   results.FormResult.ShowModal;
+end;
+
+procedure TAdminWindow.StatsButtonClick(Sender: TObject);
+var
+  JResult:TJSONData;
+  studentList: TStringList;
+  resultFiles: TStringList;
+  i,j:integer;
+begin
+     try
+        stats.StatsTestWindow.Show;
+        AdminWindow.Visible:=false;
+        studentList := TStringList.create;
+        studentList.Sorted:= true;
+        studentList.Duplicates:= dupIgnore;
+        resultFiles := FindAllFiles('PsyTest/results/', '*.json', true);
+        for i:=0 to (resultFiles.Count-1)do
+          begin
+            JResult:=GetJSON(ReadFileToString(resultFiles[i]));
+            studentList.add(JResult.FindPath('group').AsString+' '+JResult.FindPath('surname').AsString+' '+JResult.FindPath('firstname').AsString+' '+JResult.FindPath('lastname').AsString);
+          end;
+        for j:=0 to (studentList.Count-1)do
+          begin
+            stats.StatsTestWindow.UserSelector.Items.Add(studentList[j]);
+          end;
+     finally
+        resultFiles.Free;
+        FreeAndNil(JResult);
+     end;
 end;
 
 end.

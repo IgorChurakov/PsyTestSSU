@@ -13,10 +13,13 @@ type
 
   TFormResult = class(TForm)
     BackButton: TButton;
+    ExportButton: TButton;
     DeleteButton: TButton;
+    SaveDialog1: TSaveDialog;
     StringGrid1: TStringGrid;
     procedure BackButtonClick(Sender: TObject);
     procedure DeleteButtonClick(Sender: TObject);
+    procedure ExportButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -99,6 +102,30 @@ begin
                            StringGrid1.Cells[2,StringGrid1.Row] + '.json');
        StringGrid1.DeleteRow(StringGrid1.Row);
       end;
+  end;
+end;
+
+procedure TFormResult.ExportButtonClick(Sender: TObject);
+var
+  exportData: TStringList;
+  tempString: string;
+  i,j:        integer;
+begin
+  exportData := TStringList.Create;
+  for i:= 0 to StringGrid1.RowCount-1 do begin
+    tempString:='';
+    for j:= 0 to StringGrid1.ColCount-1 do begin
+      tempString:= tempString + StringGrid1.Cells[j,i] + ';'
+    end;
+    exportData.Add(tempString);
+  end;
+
+  SaveDialog1.FileName:='PsyTestExport.csv';
+  if SaveDialog1.Execute then
+  begin
+       exportData.SaveToFile(SaveDialog1.FileName);
+       AdminWindow.ListBox1.Clear;
+       AdminWindow.FormCreate(nil);
   end;
 end;
 

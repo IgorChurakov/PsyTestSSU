@@ -1,7 +1,7 @@
 object FormResult: TFormResult
-  Left = 478
+  Left = 237
   Height = 768
-  Top = 126
+  Top = 242
   Width = 1024
   Caption = 'Результаты'
   ClientHeight = 768
@@ -14,7 +14,7 @@ object FormResult: TFormResult
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.2.0.4'
   object BackButton: TButton
     Left = 904
     Height = 25
@@ -44,5 +44,20 @@ object FormResult: TFormResult
     RowCount = 1
     ScrollBars = ssNone
     TabOrder = 2
+  end
+  object ExportButton: TButton
+    Left = 456
+    Height = 25
+    Top = 16
+    Width = 128
+    Caption = 'Экспорт данных...'
+    OnClick = ExportButtonClick
+    TabOrder = 3
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'CSV файл|*.csv'
+    InitialDir = 'PsyTest/export'
+    Left = 60
+    Top = 740
   end
 end

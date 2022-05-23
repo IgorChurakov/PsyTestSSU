@@ -13,10 +13,13 @@ type
 
   TFormResult = class(TForm)
     BackButton: TButton;
+    ExportButton: TButton;
     DeleteButton: TButton;
+    SaveDialog1: TSaveDialog;
     StringGrid1: TStringGrid;
     procedure BackButtonClick(Sender: TObject);
     procedure DeleteButtonClick(Sender: TObject);
+    procedure ExportButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -74,9 +77,9 @@ end;
 procedure TFormResult.FormCreate(Sender: TObject);
 begin
   StringGrid1.ColWidths[0]:=53;
-  StringGrid1.ColWidths[1]:=545;
+  StringGrid1.ColWidths[1]:=505;
   StringGrid1.ColWidths[2]:=292;
-  StringGrid1.ColWidths[3]:=100;
+  StringGrid1.ColWidths[3]:=140;
   StringGrid1.Cells[0,0]:='Группа';
   StringGrid1.Cells[1,0]:='Название теста';
   StringGrid1.Cells[2,0]:='ФИО';
@@ -99,6 +102,32 @@ begin
                            StringGrid1.Cells[2,StringGrid1.Row] + '.json');
        StringGrid1.DeleteRow(StringGrid1.Row);
       end;
+  end;
+end;
+
+procedure TFormResult.ExportButtonClick(Sender: TObject);
+var
+  exportData: TStringList;
+  tempString: string;
+  currentRow: Integer;
+  i,j:        integer;
+begin
+  exportData := TStringList.Create;
+  currentRow := 0;
+  for i:= 0 to StringGrid1.RowCount-1 do begin
+    tempString:='';
+    for j:= 0 to StringGrid1.ColCount-1 do begin
+      tempString:= tempString + StringGrid1.Cells[j,i] + ';'
+    end;
+    exportData.Add(tempString);
+  end;
+
+  SaveDialog1.FileName:='PsyTestExport.csv';
+  if SaveDialog1.Execute then
+  begin
+       exportData.SaveToFile(SaveDialog1.FileName);
+       AdminWindow.ListBox1.Clear;
+       AdminWindow.FormCreate(nil);
   end;
 end;
 
